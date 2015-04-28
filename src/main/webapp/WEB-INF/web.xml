@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+  <display-name>Archetype Created Web Application</display-name>
+    
+    <!-- Listeners -->
+    <listener>
+        <listener-class>com.sourceit.web.listeners.ApplicationContextListener</listener-class>
+    </listener>
+    
+    <!-- Servlets -->
+    <servlet>
+        <servlet-name>LoginServletHandler</servlet-name>
+        <servlet-class>com.sourceit.web.controller.common.LoginServletHandler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServletHandler</servlet-name>
+        <url-pattern>/login.php</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ErrorServletHandler</servlet-name>
+        <servlet-class>com.sourceit.web.controller.common.ErrorServletHandler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorServletHandler</servlet-name>
+        <url-pattern>/error.php</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ErrorServletHandler</servlet-name>
+        <url-pattern>/pageNotFound.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminHomeServletHandler</servlet-name>
+        <servlet-class>com.sourceit.web.controller.admin.AdminHomeServletHandler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminHomeServletHandler</servlet-name>
+        <url-pattern>/admin/home.php</url-pattern>
+    </servlet-mapping>
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pageNotFound.php</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.php</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.php</location>
+    </error-page>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
+    </welcome-file-list>
+    
+</web-app>
