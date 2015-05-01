@@ -8,6 +8,6 @@ public class ErrorServletHandler extends CommonServletHandler {
 	
 	@Override
 	protected void handleRequest(HttpServletRequest request,HttpServletResponse response) throws Exception {
-		forwardToJSP("error.jsp", request, response);
+		forwardToJSP("error", request, response);
 	}
 }
